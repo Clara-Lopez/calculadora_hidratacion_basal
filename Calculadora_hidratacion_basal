@@ -1,0 +1,21 @@
+def calcular_hidratacion_basal(peso_kg, actividad):
+    factores_hidratacion = {
+        'sedentario': 30,
+        'moderadamente_activo': 35,
+        'muy_activo': 40
+    }
+
+    if actividad.lower() not in factores_hidratacion:
+        print("Error: Actividad no válida.")
+        return
+
+    factor_hidratacion = factores_hidratacion[actividad.lower()]
+    hidratacion_basal = peso_kg * factor_hidratacion
+
+    print(f"Hidratación basal recomendada: {hidratacion_basal} ml/día")
+
+# Ejemplo de uso
+peso = float(input("Ingrese el peso corporal en kilogramos: "))
+nivel_actividad = input("Ingrese el nivel de actividad (sedentario, moderadamente_activo, muy_activo): ")
+
+calcular_hidratacion_basal(peso, nivel_actividad)
